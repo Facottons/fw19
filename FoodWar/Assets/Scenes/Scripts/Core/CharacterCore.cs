@@ -7,7 +7,8 @@ using UnityStandardAssets.CrossPlatformInput;
 public class CharacterCore : MonoBehaviour {
 
     [Header("Character Informations")]
-    public float life;
+    public int life;
+    public int maxLife;
     [SerializeField]
     private float speed;
     public float jumpForce;
@@ -43,6 +44,7 @@ public class CharacterCore : MonoBehaviour {
     public Text lifeText;
     public Text eggText;
     public Text eggCoinText;
+    public Slider sliderLife;
     bool isMobile = false;
 
     // Use this for initialization
@@ -50,7 +52,8 @@ public class CharacterCore : MonoBehaviour {
 
         //Creating rigidBody2D Component
         gameObject.AddComponent<Rigidbody2D>();
-
+        maxLife = life;
+        
         //Attributing
         characterRigidBody = gameObject.GetComponent<Rigidbody2D>();
         characterRigidBody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
@@ -72,7 +75,11 @@ public class CharacterCore : MonoBehaviour {
     void Update () {
         //shoot line
 		  Debug.DrawLine(gunPositionStart.position, gunPositionEnd.position, Color.green);
-	}
+        if(life >= 0)
+        {
+             sliderLife.value = life;
+        }
+    }
 
     private void FixedUpdate()
     {
@@ -193,7 +200,8 @@ public class CharacterCore : MonoBehaviour {
                 Debug.Log("Jump");
                 // animator.SetFloat("velocidadeY", characterRigidBody.velocity.y);
                 animator.SetBool("isJumping", true);
-                characterRigidBody.AddForce(new Vector2(0f, jumpForce));
+                //characterRigidBody.AddForce(new Vector2(0f, jumpForce));
+                characterRigidBody.velocity = Vector2.up * jumpForce;
                 numberJumps++;
                 isGrunded = false;
             }
@@ -207,7 +215,8 @@ public class CharacterCore : MonoBehaviour {
                 Debug.Log("Jump");
                 // animator.SetFloat("velocidadeY", characterRigidBody.velocity.y);
                 animator.SetBool("isJumping", true);
-                characterRigidBody.AddForce(new Vector2(0f, jumpForce));
+                //  characterRigidBody.AddForce(new Vector2(0f, jumpForce));
+                characterRigidBody.velocity = Vector2.up * jumpForce;
                 numberJumps++;
                 isGrunded = false;
             }

@@ -204,8 +204,12 @@ MonoBehaviour:
   gunPositionStartUp: {fileID: 4462226888948876}
   gunPositionStart: {fileID: 4234095351721654}
   gunPositionEnd: {fileID: 4523687383946834}
-  pickupChance: 0
-  pickups: []
+  pickupChance: 25
+  pickups:
+  - {fileID: 1483197739221804, guid: f163d6e8e3f0d034fa69a9f4c50639ed, type: 2}
+  - {fileID: 1858359850154114, guid: f1d96f0de623085468b5929446de492e, type: 2}
+  - {fileID: 1749141703803854, guid: f0d7a497a78ccc74392d74b5d34238d4, type: 2}
+  - {fileID: 1812818421430956, guid: 2ad99ad327577aa42bb922c73722ef83, type: 2}
   action: 0
 --- !u!212 &212851037483013130
 SpriteRenderer:

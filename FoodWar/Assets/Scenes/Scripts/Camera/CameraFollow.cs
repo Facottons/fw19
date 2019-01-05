@@ -30,9 +30,12 @@ public class CameraFollow : MonoBehaviour {
 
     public void LateUpdate()
     {
-        Vector3 desiredPositin = playerTransform.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position,desiredPositin,speed*Time.deltaTime);
-        transform.position = smoothedPosition;
+        if(playerTransform != null)
+        {
+            Vector3 desiredPositin = playerTransform.position + offset;
+            Vector3 smoothedPosition = Vector3.Lerp(transform.position,desiredPositin,speed*Time.deltaTime);
+            transform.position = smoothedPosition;
+        }
     }
 
 

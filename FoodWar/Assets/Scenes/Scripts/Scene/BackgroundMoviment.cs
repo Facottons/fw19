@@ -40,18 +40,22 @@ public class BackgroundMoviment : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (playerTransform.position.x > prevPlayerPosition.x )
+        if(playerTransform != null)
         {
-            Vector2 offset = new Vector2(speed * Time.deltaTime,0);
-            backgroundQuad3D.material.mainTextureOffset += offset;
-            prevPlayerPosition = playerTransform.position;
-        }
-        else if(playerTransform.position.x < prevPlayerPosition.x)
-        {
+
+            if (playerTransform.position.x > prevPlayerPosition.x )
+            {
+                Vector2 offset = new Vector2(speed * Time.deltaTime,0);
+                backgroundQuad3D.material.mainTextureOffset += offset;
+                prevPlayerPosition = playerTransform.position;
+            }
+            else if(playerTransform.position.x < prevPlayerPosition.x)
+            {
             
-            Vector2 offset = new Vector2(speed * Time.deltaTime, 0);
-            backgroundQuad3D.material.mainTextureOffset -= offset;
-            prevPlayerPosition = playerTransform.position;
+                Vector2 offset = new Vector2(speed * Time.deltaTime, 0);
+                backgroundQuad3D.material.mainTextureOffset -= offset;
+                prevPlayerPosition = playerTransform.position;
+            }
         }
 
 	}

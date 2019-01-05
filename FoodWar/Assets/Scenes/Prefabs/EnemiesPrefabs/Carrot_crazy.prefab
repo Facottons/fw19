@@ -156,16 +156,19 @@ MonoBehaviour:
   stopDistance: 0
   attackSpeed: 0
   timeBetweenAttack: 0
+  iaBehavior: 0
   isArmedEnum: 0
   projectile: {fileID: 0}
+  rocket: {fileID: 0}
   shotPoint: {fileID: 0}
   timeBetweenShots: 0
+  gunPositionStartUp: {fileID: 0}
   gunPositionStart: {fileID: 4577613575908030}
   gunPositionEnd: {fileID: 4724789962504776}
   pickupChance: 100
   pickups:
-  - {fileID: 1627019176869586, guid: 5013e6c4d60a6d8488ba0a53222fa304, type: 2}
-  - {fileID: 1249177193384816, guid: 9b273051bdfafdd45b9bafb1b1797b3d, type: 2}
+  - {fileID: 1483197739221804, guid: f163d6e8e3f0d034fa69a9f4c50639ed, type: 2}
+  - {fileID: 1483197739221804, guid: f163d6e8e3f0d034fa69a9f4c50639ed, type: 2}
   explosion: {fileID: 1192941531230678, guid: 9f415c4280cbe074d893bdce9892382f, type: 2}
 --- !u!212 &212671306051866218
 SpriteRenderer:
